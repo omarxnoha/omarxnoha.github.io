@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Omar and Noha</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Omar and Noha are getting engaged. Friday, 11 December 2026, 7:30 PM, Vintage Bar & Lounge.">
+<meta name="theme-color" content="#f3eee2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,500;0,600;1,400;1,500&text=0123456789&display=swap">
+<style>
+/* Omar and Noha: ivory paper, burgundy ink, dusty rose, champagne pearls.
+   Capitals in Cormorant Garamond, joining words in its italic that write themselves on,
+   a copperplate script for names of people and places. Our paintings sit in pearl frames. */
+:root{
+  --paper:#f3eee2;
+  --paper-2:#ebe4d3;
+  --card:#faf7ef;
+  --ink:#3a151a;
+  --olive:#6e1a26;
+  --sage:#c9a98a;
+  --rose:#b4878a;
+  --wine:#a3243a;
+  --night:#120c08;
+  --serif:"Cormorant Infant","Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .38  0 0 0 0 .26  0 0 0 0 .22  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--paper);overflow-x:clip;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.45;font-weight:500;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"pnum" 1}
+body::before{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;background-image:var(--grain);background-size:240px;opacity:.11;transform:translateZ(0)}
+body.locked{overflow:hidden;height:100%}
+img,video,canvas{display:block}
+button,input{font:inherit;color:inherit}
+a{color:inherit}
+h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
+:focus-visible{outline:1.5px solid var(--olive);outline-offset:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- type ---------- */
+.caps{font-weight:500;text-transform:uppercase;letter-spacing:.07em;line-height:.98}
+.names{font-size:clamp(54px,17vw,92px);letter-spacing:.06em}
+.title{font-size:clamp(34px,10.4vw,54px)}
+.it{font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;display:inline-block;padding:0 .18em;margin:0 -.1em}
+.names .it{display:block;font-size:.6em;line-height:1.05;margin:.02em 0 .04em}
+.title .it{font-size:.74em;padding:0 .2em}
+.small-caps{font-size:clamp(14px,3.9vw,16px);letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.lede{font-style:italic;font-size:clamp(21px,5.8vw,25px);line-height:1.32}
+.body{font-size:clamp(19px,5.1vw,21px);line-height:1.5}
+.script{font-family:var(--script);font-weight:400;font-size:clamp(32px,9vw,46px);line-height:1.15;letter-spacing:0;text-transform:none}
+.dim{color:var(--olive)}
+
+/* ---------- the ink: letters settle in, italic and script words are written left to right ---------- */
+.ink .ch{display:inline-block;opacity:0;filter:blur(7px);transform:translateY(.16em);white-space:pre}
+.ink.on .ch{animation:settle 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--d,0s) + var(--i) * 55ms)}
+@keyframes settle{to{opacity:1;filter:none;transform:none}}
+.pen{-webkit-mask-image:linear-gradient(90deg,#000 0 42%,transparent 58% 100%);mask-image:linear-gradient(90deg,#000 0 42%,transparent 58% 100%);
+  -webkit-mask-size:260% 100%;mask-size:260% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.on .pen,.pen.on{animation:write var(--pen,1.5s) cubic-bezier(.45,.05,.35,1) both;animation-delay:var(--d,0s)}
+@keyframes write{to{-webkit-mask-position:0 0;mask-position:0 0}}
+.rise{opacity:0;transform:translateY(12px);filter:blur(4px)}
+.on .rise,.rise.on{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}
+
+/* ---------- pearl frames ---------- */
+.pearls{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+
+/* ---------- opening: the sealed envelope ---------- */
+.opening{position:fixed;inset:0;z-index:50;background:var(--night);overflow:hidden;isolation:isolate}
+.opening .spill{position:absolute;inset:-60px;background:url(assets/envelope-sealed.jpg) center/cover;filter:blur(40px) brightness(.4)}
+.opening .frame{position:absolute;inset:0;margin-inline:auto;overflow:hidden}
+@media (min-aspect-ratio:4/5){.opening .frame{width:auto;height:100%;aspect-ratio:9/16;box-shadow:0 0 120px rgba(0,0,0,.6)}}
+.scene{position:absolute;transform-origin:50.3% 58.9%}
+.scene img{position:absolute;inset:0;width:100%;height:100%}
+.scene .sealed{z-index:1}
+.opening .spot{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at var(--sx,50%) var(--sy,59%),rgba(0,0,0,0) 0,rgba(0,0,0,0) 13vmax,rgba(8,5,3,.5) 46vmax,rgba(8,5,3,.72) 80vmax);transition:opacity .6s}
+.seal{position:absolute;left:39.64%;top:52.93%;width:21.25%;height:11.96%;z-index:3}
+.seal .piece{position:absolute;inset:0;background:url(assets/seal.png) center/100% 100% no-repeat;will-change:transform}
+.seal .left{clip-path:polygon(0 0,53% 0,50% 17%,56% 31%,47% 47%,54% 63%,45% 80%,49% 100%,0 100%)}
+.seal .right{clip-path:polygon(53% 0,100% 0,100% 100%,49% 100%,45% 80%,54% 63%,47% 47%,56% 31%,50% 17%)}
+.seal .crack{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:0;z-index:4}
+.seal .crack path{fill:none;stroke:#ffe9b8;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 3px #ffd27a) drop-shadow(0 0 8px #ffb84d)}
+.seal .whole{position:absolute;inset:0;z-index:3;animation:breathe 2.8s ease-in-out infinite}
+.seal .whole .piece{animation:none}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.seal .glint{position:absolute;inset:6%;border-radius:50%;overflow:hidden;pointer-events:none;mix-blend-mode:screen}
+.seal .glint::after{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-60%;
+  background:linear-gradient(100deg,transparent,rgba(255,228,190,.55),transparent);transform:skewX(-14deg);animation:glint 3.6s ease-in-out infinite 1s}
+@keyframes glint{0%{left:-60%}38%,100%{left:130%}}
+.ripple{position:absolute;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;pointer-events:none}
+.ripple i{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,246,228,.9);box-shadow:0 0 14px rgba(255,220,170,.35);opacity:0;animation:ripple 2.8s cubic-bezier(.15,.6,.3,1) infinite}
+.ripple i:nth-child(2){animation-delay:.45s}
+.ripple i:nth-child(3){animation-delay:.9s;border-width:1px}
+@keyframes ripple{0%{transform:scale(.62);opacity:0}12%{opacity:.95}70%,100%{transform:scale(1.75);opacity:0}}
+.touch{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,250,240,.55),rgba(255,250,240,0) 70%);opacity:0;animation:touch 2.8s ease-in-out infinite}
+@keyframes touch{0%,4%{opacity:0;transform:scale(.6)}9%{opacity:.9;transform:scale(1)}22%,100%{opacity:0;transform:scale(1.1)}}
+.light{position:absolute;left:50%;top:50%;width:300vmax;height:300vmax;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:2;
+  background:radial-gradient(circle,#fffaf0 0,#fff4dc 9%,rgba(255,231,186,.85) 17%,rgba(255,214,150,.35) 30%,rgba(255,200,130,0) 48%);transform:scale(0);opacity:0}
+.crumb{position:absolute;left:50%;top:50%;width:5%;aspect-ratio:1;border-radius:40% 55% 45% 60%;background:radial-gradient(circle at 35% 30%,#b8322f,#6e1013 70%);z-index:4;opacity:0}
+.wash{position:absolute;inset:0;z-index:6;background:var(--paper);opacity:0;pointer-events:none}
+.forline{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + clamp(48px,9svh,96px));z-index:5;text-align:center;color:#fbf3e4;
+  text-shadow:0 2px 18px rgba(0,0,0,.55);transition:opacity .5s}
+.forline .f{display:table;margin:0 auto;padding:0 .2em;font-style:italic;font-size:22px;line-height:1}
+.forline .script{display:inline-block;padding:0 .2em;font-size:clamp(46px,13vw,64px);color:#fff7ea}
+.tapzone{position:absolute;inset:0;z-index:7;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tapzone:focus-visible{outline:1.5px solid #fff3dc;outline-offset:-10px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate;
+  padding:calc(env(safe-area-inset-top,0px) + 72px) 24px 120px}
+.haze{position:absolute;inset:-20%;z-index:-1;pointer-events:none;
+  background:radial-gradient(38% 30% at 30% 30%,rgba(222,190,180,.55),transparent 70%),radial-gradient(40% 32% at 72% 66%,rgba(232,208,160,.5),transparent 70%),radial-gradient(30% 26% at 70% 22%,rgba(214,168,150,.38),transparent 70%);
+  filter:blur(20px);animation:drift 22s ease-in-out infinite alternate}
+.hero.off .haze,.hero.off .cue i{animation-play-state:paused}
+@keyframes drift{to{transform:translate3d(3%,-2%,0) scale(1.06)}}
+.hero .frameline{position:absolute;inset:calc(env(safe-area-inset-top,0px) + 18px) 18px calc(env(safe-area-inset-bottom,0px) + 18px);border:1px solid rgba(110,26,38,.28);pointer-events:none}
+.hero .frameline::after{content:"";position:absolute;inset:5px;border:1px solid rgba(110,26,38,.16)}
+.hero .names{margin:0}
+.hero .lede{margin-top:30px}
+.hero .date{margin-top:10px;font-style:italic;font-size:clamp(20px,5.4vw,23px);letter-spacing:.06em}
+.cue{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 44px);translate:-50% 0;display:grid;justify-items:center;gap:10px;color:var(--olive)}
+.cue span{font-style:italic;font-size:17px}
+.cue i{display:block;width:1px;height:46px;background:linear-gradient(var(--olive),var(--olive)) top/1px 0 no-repeat;animation:drop 2.4s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes drop{0%{background-size:1px 0;background-position:top}50%{background-size:1px 100%;background-position:top}51%{background-position:bottom}100%{background-size:1px 0;background-position:bottom}}
+
+/* ---------- the walk ---------- */
+.walk{position:relative;height:560svh}
+.stage{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden}
+.zone{position:absolute;left:0;right:0;display:grid;place-items:center;text-align:center;padding:0 22px}
+.zone.top{top:calc(env(safe-area-inset-top,0px) + 2svh);height:20svh;min-height:112px}
+.zone.bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 1svh);height:21svh;min-height:118px}
+.zone > div{grid-area:1/1;display:grid;justify-items:center;gap:8px;opacity:0;transition:opacity .7s ease}
+.zone > div.show{opacity:1}
+.zone > div:not(.show){transition-duration:.4s}
+.arch{position:absolute;left:50%;top:max(22svh,120px);translate:-50% 0;height:calc(100svh - max(22svh,120px) - max(23svh,128px));aspect-ratio:.66;max-width:82vw}
+.arch canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:999px 999px 6px 6px}
+.arch .pearls{inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px)}
+
+/* ---------- details ---------- */
+.details{position:relative;padding:clamp(80px,13svh,120px) 24px clamp(70px,11svh,110px);text-align:center;display:grid;justify-items:center}
+.details .small-caps{margin-top:22px}
+.details .when{margin-top:6px;font-style:italic;font-size:clamp(21px,5.8vw,24px)}
+.rule{width:150px;height:14px;margin:34px auto 26px;color:var(--sage)}
+.sketch{position:relative;width:min(80vw,340px);aspect-ratio:4/5;margin:38px auto 30px}
+.sketch .pic{position:absolute;inset:0;overflow:hidden;background:var(--card)}
+.sketch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sketch .lines{mix-blend-mode:multiply;opacity:.9}
+.sketch .color{--r:-20;-webkit-mask-image:radial-gradient(circle at 54% 62%,#000 calc(var(--r) * 1%),transparent calc(var(--r) * 1% + 24%));mask-image:radial-gradient(circle at 54% 62%,#000 calc(var(--r) * 1%),transparent calc(var(--r) * 1% + 24%))}
+.sketch .pearls{inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px)}
+.details .script{color:var(--ink)}
+.details .addr{margin-top:6px;max-width:23em}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;margin-top:26px;border:1px solid var(--olive);color:var(--olive);
+  text-decoration:none;font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:background-color .25s,color .25s}
+.btn-line:hover{background:var(--olive);color:var(--paper)}
+
+.band{position:relative;background:var(--olive);color:#f6ece4;text-align:center;padding:clamp(70px,11svh,100px) 28px;isolation:isolate}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.08),transparent 60%)}
+.band .body{max-width:22em;margin:22px auto 0}
+.band .body + .body{margin-top:12px}
+.band .title{color:#f6f1e3}
+.band :focus-visible{outline-color:#f6ece4}
+
+/* ---------- RSVP ---------- */
+.rsvp{position:relative;padding:clamp(84px,13svh,130px) 22px clamp(84px,12svh,120px)}
+.rsvp-inner{max-width:420px;margin:0 auto}
+.rsvp-head{text-align:center;display:grid;justify-items:center}
+.mono{font-size:44px;line-height:1;color:var(--olive);letter-spacing:.04em}
+.mono .it{font-size:.9em;padding:0 .12em}
+.rsvp-head .title{margin-top:14px;letter-spacing:.14em}
+.rsvp-head .lede{margin-top:16px}
+form{margin-top:40px;display:grid;gap:20px}
+.field{display:grid;gap:7px}
+.field label,legend{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--olive)}
+.field input{width:100%;height:54px;border:1px solid var(--sage);border-radius:2px;background:var(--card);padding:0 16px;font-size:21px;font-weight:500;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input:focus{outline:none;border-color:var(--olive);box-shadow:0 0 0 3px rgba(110,26,38,.14)}
+fieldset{border:0;margin:6px 0 0;padding:0;min-width:0;display:grid;gap:10px}
+legend{margin-bottom:9px;padding:0}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt label{display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 18px;cursor:pointer;background:var(--paper-2);border:1px solid transparent;
+  font-style:italic;font-size:22px;transition:background-color .3s,color .3s,border-color .3s}
+.opt label:hover{border-color:var(--sage)}
+.opt .tick{width:0;overflow:hidden;display:inline-grid;place-items:center;transition:width .3s}
+.opt .tick svg{width:16px;height:16px}
+.opt input:checked + label{background:var(--olive);color:#f6f1e3}
+.opt input:checked + label .tick{width:16px}
+.opt input:focus-visible + label{outline:1.5px solid var(--olive);outline-offset:3px}
+.error{min-height:22px;margin:-6px 0 0;color:var(--wine);font-style:italic;font-size:18px;text-align:center}
+.send{height:56px;border:0;background:var(--ink);color:#f6f1e3;font-size:15px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background-color .25s,transform .12s}
+.send:hover{background:var(--olive)}
+.send:active{transform:scale(.985)}
+
+/* ---------- finale: ring, the diamond's light, then the dance and the countdown ---------- */
+.finale{position:relative;height:100svh;min-height:min(600px,100svh);overflow:hidden;isolation:isolate;background:var(--night);color:#f7f0e2}
+.finale .spill{position:absolute;inset:-60px;background:url(assets/venue-dancing.jpg) center/cover;filter:blur(44px) brightness(.35)}
+.finale .frame{position:absolute;inset:0;margin-inline:auto;overflow:hidden}
+@media (min-aspect-ratio:4/5){.finale .frame{width:auto;height:100%;aspect-ratio:9/16}}
+.media{position:absolute}
+.media > img,.media > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dance{transform:scale(1.08);filter:brightness(.86)}
+.finale.after .dance{transform:scale(1);transition:transform 9s cubic-bezier(.2,.6,.2,1)}
+.veil{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 2s ease;
+  background:linear-gradient(180deg,rgba(14,8,5,.86) 0%,rgba(14,8,5,.5) 24%,rgba(14,8,5,.06) 42%,rgba(14,8,5,.08) 58%,rgba(14,8,5,.62) 74%,rgba(14,8,5,.92) 100%)}
+.finale.after .veil{opacity:1}
+.star{position:absolute;left:47.9%;top:50.9%;width:46%;aspect-ratio:1;translate:-50% -50%;pointer-events:none;opacity:0;z-index:3;mix-blend-mode:screen}
+.star i{position:absolute;left:50%;top:50%;border-radius:50%;translate:-50% -50%}
+.star .h{width:100%;height:3%;background:radial-gradient(closest-side,#fff 0,rgba(255,250,235,.9) 30%,rgba(255,240,210,0) 100%)}
+.star .v{width:3%;height:100%;background:radial-gradient(closest-side,#fff 0,rgba(255,250,235,.9) 30%,rgba(255,240,210,0) 100%)}
+.star .d1,.star .d2{width:56%;height:2%;background:radial-gradient(closest-side,#fff,rgba(255,245,225,0));rotate:45deg}
+.star .d2{rotate:-45deg}
+.star .core{width:16%;height:16%;background:radial-gradient(circle,#fff 0,#fffaf0 30%,rgba(255,236,200,0) 72%)}
+.flare{position:absolute;left:47.9%;top:50.9%;width:320vmax;height:320vmax;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:2;opacity:0;transform:scale(0);
+  background:radial-gradient(circle,#ffffff 0,#fffaf0 12%,#fff3dc 22%,rgba(255,236,205,.9) 32%,rgba(255,226,180,.3) 42%,rgba(255,220,170,0) 50%)}
+.whiteout{position:absolute;inset:0;z-index:4;background:#fffaf0;opacity:0;pointer-events:none}
+.curtain{position:fixed;inset:0;z-index:55;display:grid;place-items:center;padding:24px;text-align:center;opacity:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 55%,#2a1210,var(--night) 70%);color:#f3e7d6}
+.curtain .lede{font-size:clamp(28px,8vw,40px)}
+.end{position:absolute;inset:0;z-index:5;display:grid;grid-template-rows:auto 1fr auto;text-align:center;
+  padding:calc(env(safe-area-inset-top,0px) + clamp(52px,9svh,92px)) 20px calc(env(safe-area-inset-bottom,0px) + clamp(22px,4svh,44px));visibility:hidden}
+.finale.after .end{visibility:visible}
+.end .head{display:grid;justify-items:center;gap:16px}
+.end .lede{color:#efe5d2;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.end .phrase{font-size:clamp(38px,11.4vw,58px);text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.end .phrase .it{display:block;font-size:.62em;margin:.04em 0 .06em}
+.end .foot{display:grid;justify-items:center;gap:6px}
+.count{display:flex;justify-content:center;gap:clamp(14px,5.4vw,30px)}
+.count div{display:grid;justify-items:center;min-width:2.4ch}
+.count b{font-size:clamp(40px,11.4vw,58px);font-weight:500;line-height:1;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;letter-spacing:.02em}
+.count span{margin-top:6px;font-style:italic;font-size:17px;color:#e3d7bf}
+.end .when{margin-top:14px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:#e9dfca}
+.linkish{background:none;border:0;padding:10px 14px;min-height:44px;color:#d9ccb3;font-style:italic;font-size:18px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:rgba(217,204,179,.5)}
+.linkish:hover{color:#fff}
+.finale :focus-visible{outline-color:#f3e9d6}
+
+/* music */
+.sound{position:fixed;z-index:60;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(110,26,38,.25);background:rgba(243,238,226,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .6s}
+.sound.on{opacity:1;pointer-events:auto}
+.sound .bars{display:flex;gap:3px;align-items:center;height:14px}
+.sound .bars i{width:2px;height:6px;background:var(--olive);border-radius:1px;animation:eq 1.2s infinite ease-in-out}
+.sound .bars i:nth-child(2){animation-delay:-.45s}.sound .bars i:nth-child(3){animation-delay:-.8s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.sound.muted .bars i{animation:none;height:2px}
+
+/* the pen's mask clips at the element's box, and italic and script letters lean outside it:
+   give every written line room on all sides, then take the same room back with negative margins so nothing moves */
+.pen{padding:.22em .5em;margin:-.22em -.5em}
+.it.pen{padding:.22em .5em;margin:-.22em -.42em}
+.title .it.pen{margin:-.22em -.4em}
+.names .it.pen{margin:-.2em -.42em -.18em}
+.end .phrase .it.pen{margin:-.18em -.42em -.16em}
+.mono .it.pen{margin:-.22em -.48em}
+.forline .script.pen{margin:.12em -.3em 0}
+.forline .f.pen{margin:-.22em auto 0}
+
+@media (max-height:680px){
+  .title{font-size:clamp(30px,9.4vw,40px)}
+  .end{padding-top:calc(env(safe-area-inset-top,0px) + 30px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 10px)}
+  .end .head{gap:10px}
+  .end .lede{font-size:19px}
+  .end .phrase{font-size:clamp(32px,9.6vw,40px)}
+  .count b{font-size:clamp(34px,10vw,44px)}
+  .count span{font-size:15px}
+  .end .when{margin-top:8px}
+  .linkish{padding-block:6px}
+  .zone.top{min-height:96px}
+  .zone.bottom{min-height:100px}
+  .script{font-size:clamp(28px,8.4vw,40px)}
+}
+@media (max-width:340px){
+  .title{letter-spacing:.05em}
+  .names{font-size:50px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ink .ch,.pen,.rise{opacity:1!important;filter:none!important;transform:none!important;-webkit-mask-image:none!important;mask-image:none!important;animation:none!important}
+  .seal .whole,.ripple i,.touch,.seal .glint::after,.cue i,.sound .bars i{animation:none}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omarxnoha.github.io/">
+<meta property="og:title" content="Omar and Noha are getting engaged">
+<meta property="og:description" content="Friday, 11 December 2026 at 7:30 PM, Vintage Bar &amp; Lounge. Open your invitation.">
+<meta property="og:image" content="https://omarxnoha.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22%237d1d26%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2241%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2224%22%20fill%3D%22%23f3eee2%22%20text-anchor%3D%22middle%22%3EO%26amp%3BN%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="assets/og.jpg">
+</head>
+<body>
+
+
+<!-- Opening: the sealed envelope. The seal invites a tap, then breaks. -->
+<section class="opening" id="opening" aria-label="Your invitation">
+  <div class="spill"></div>
+  <div class="frame" id="openFrame">
+    <div class="scene" id="scene">
+      <img src="assets/envelope-open-base.jpg" alt="" width="941" height="1672">
+      <img class="sealed" id="sealedArt" src="assets/envelope-sealed.jpg" alt="A sealed ivory envelope with a red O&N wax seal" width="941" height="1672">
+      <div class="seal" id="seal">
+        <div class="ripple" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="whole" id="sealWhole">
+          <div class="piece left"></div><div class="piece right"></div>
+          <div class="glint"></div>
+        </div>
+        <svg class="crack" id="crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M52.4 11 L50 17 L56 31 L47 47 L54 63 L45 80 L46.6 88"/></svg>
+        <span class="touch" aria-hidden="true"></span>
+        <span class="light" id="light" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="spot" id="spot"></div>
+  </div>
+  <p class="forline" id="forLine" hidden><span class="f pen" style="--pen:.9s">for</span><span class="script pen" id="guestName" style="--d:.5s;--pen:1.8s"></span></p>
+  <div class="wash" id="wash"></div>
+  <button class="tapzone" id="tapzone" type="button" aria-label="Break the seal and open the invitation"></button>
+</section>
+
+<div class="curtain" id="curtain" hidden aria-hidden="true"><p class="lede pen" id="thanks" style="--pen:1.4s"></p></div>
+<button class="sound" id="sound" type="button" aria-label="Pause music"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
+<audio id="song" src="assets/song.mp3" preload="auto" loop></audio>
+
+<main>
+  <!-- The names -->
+  <header class="hero" id="hero">
+    <div class="haze" aria-hidden="true"></div><div class="frameline rise" style="--d:.2s" aria-hidden="true"></div>
+    <div>
+      <h1 class="caps names" data-ink><span class="sr">Omar and Noha</span><span aria-hidden="true"><span class="w">Omar</span><span class="it pen" style="--d:1.1s;--pen:1.6s">and</span><span class="w" style="--d:1.9s">Noha</span></span></h1>
+      <p class="lede rise" style="--d:2.7s">are getting engaged</p>
+      <p class="date rise" style="--d:3.1s">11 . 12 . 2026</p>
+    </div>
+    <div class="cue rise" style="--d:3.8s" aria-hidden="true"><span>scroll</span><i></i></div>
+  </header>
+
+  <!-- The walk: as you scroll, Omar and Noha walk toward each other and meet at the venue -->
+  <section class="walk" id="walk" aria-label="Save the date">
+    <div class="stage">
+      <div class="zone top">
+        <div data-in="-1" data-out=".36" id="ch1t"><h2 class="caps title" data-ink><span class="sr">Save the date</span><span aria-hidden="true"><span class="w">Save</span> <span class="it pen" style="--d:.45s">the</span> <span class="w" style="--d:.9s">Date</span></span></h2></div>
+        <div data-in=".4" data-out=".68" id="ch2t"><h2 class="caps title" data-ink><span class="sr">We're waiting to celebrate with you!</span><span aria-hidden="true"><span class="w">We're waiting</span></span></h2></div>
+        <div data-in=".8" data-out="2" id="ch3t"><h2 class="caps title" data-ink><span class="sr">Find us dancing here</span><span aria-hidden="true"><span class="w">Find us</span> <span class="it pen" style="--d:.7s;--pen:1.5s">dancing</span> <span class="w" style="--d:1.4s">here</span></span></h2></div>
+      </div>
+
+      <div class="arch" id="arch">
+        <canvas id="film" role="img" aria-label="Omar and Noha, seen from behind, walk toward each other across Vintage Bar and take each other's hand"></canvas>
+        <svg class="pearls" id="archPearls" aria-hidden="true"></svg>
+      </div>
+
+      <div class="zone bottom">
+        <div data-in="-1" data-out=".36" id="ch1b"><p class="small-caps rise">Friday, 11 December 2026</p><p class="lede rise" style="--d:.35s" id="timeLine">at 7:30 in the evening</p></div>
+        <div data-in=".4" data-out=".68" id="ch2b" aria-hidden="true"><p class="lede pen" style="--d:.9s;--pen:1.7s">to celebrate with you!</p></div>
+        <div data-in=".8" data-out="2" id="ch3b"><p class="script pen" style="--pen:2s">Vintage Bar &amp; Lounge</p><p class="lede rise" style="--d:1.2s">Renaissance Cairo Mirage City</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Date and venue -->
+  <section class="details reveal" aria-labelledby="dvTitle">
+    <h2 class="caps title" id="dvTitle" data-ink><span class="sr">Date and venue</span><span aria-hidden="true"><span class="w">Date</span> <span class="it pen" style="--d:.5s">and</span> <span class="w" style="--d:1s">Venue</span></span></h2>
+    <p class="small-caps rise" style="--d:1.4s">Friday, 11 December 2026</p>
+    <p class="when rise" style="--d:1.6s">7:30 PM</p>
+    <div class="sketch rise" style="--d:1.8s" id="sketch">
+      <div class="pic"><img class="lines" src="assets/venue-lines.jpg" alt="" width="800" height="1000" loading="lazy"><img class="color" id="sketchColor" src="assets/venue-color.jpg" alt="A painting of Vintage Bar & Lounge, the lattice screens glowing amber behind red velvet chairs" width="800" height="1000" loading="lazy"></div>
+      <svg class="pearls" id="sketchPearls" aria-hidden="true"></svg>
+    </div>
+    <p class="script pen" style="--d:2s;--pen:2s">Vintage Bar &amp; Lounge</p>
+    <p class="body addr rise" style="--d:2.6s"><i>Lobby of the Renaissance Cairo Mirage City Hotel, Suez Road</i></p>
+    <a class="btn-line rise" style="--d:2.9s" href="https://maps.app.goo.gl/Wupdq1xjR3xWgHCM6?g_st=ic" target="_blank" rel="noopener">View on map</a>
+  </section>
+
+  <section class="band reveal" aria-labelledby="gkTitle">
+    <h2 class="caps title" id="gkTitle" data-ink><span class="sr">Good to know</span><span aria-hidden="true"><span class="w">Good</span> <span class="it pen" style="--d:.45s">to</span> <span class="w" style="--d:.8s">Know</span></span></h2>
+    <p class="body rise" style="--d:1.2s">There is a minimum charge of 900 EGP per person.</p>
+    <p class="body rise" style="--d:1.4s"><i>Kindly let us know below whether you can make it.</i></p>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp reveal" id="rsvp" aria-labelledby="rsvpTitle">
+    <div class="rsvp-inner">
+      <div class="rsvp-head">
+        <p class="mono caps pen" style="--pen:1.6s" aria-hidden="true">O<span class="it">&amp;</span>N</p>
+        <h2 class="caps title" id="rsvpTitle" data-ink style="--d:.6s">RSVP</h2>
+        <p class="lede rise" style="--d:1.2s">Let us know if you can make it!</p>
+      </div>
+      <form id="rsvpForm" novalidate>
+        <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" required></div>
+        <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" required></div>
+        <fieldset>
+          <legend>Will you be there?</legend>
+          <div class="opt"><input type="radio" name="attending" id="att-yes" value="yes"><label for="att-yes"><span class="tick"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.4l3.2 3.1L13 4.6"/></svg></span>Yes, definitely</label></div>
+          <div class="opt"><input type="radio" name="attending" id="att-no" value="no"><label for="att-no"><span class="tick"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.4l3.2 3.1L13 4.6"/></svg></span>Sadly, I can't make it</label></div>
+        </fieldset>
+        <p class="error" id="formError" role="alert"></p>
+        <button class="send" type="submit">Send RSVP</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- After sending: ring film -> the diamond shines -> the dance, the countdown -->
+  <section class="finale" id="finale" hidden aria-live="polite">
+    <div class="spill"></div>
+    <div class="frame" id="finFrame">
+      <div class="media" id="finMedia">
+        <img class="dance" id="dance" src="assets/venue-dancing.jpg" alt="Omar and Noha dancing inside Vintage Bar & Lounge" width="941" height="1672">
+        <img id="ringStill" src="assets/ring-final.jpg" alt="" width="720" height="1280">
+        <video id="ring" src="assets/ring.mp4" muted playsinline preload="none" poster="assets/ring-poster.jpg"></video>
+        <span class="flare" id="flare" aria-hidden="true"></span>
+        <span class="star" id="star" aria-hidden="true"><i class="h"></i><i class="v"></i><i class="d1"></i><i class="d2"></i><i class="core"></i></span>
+      </div>
+      <div class="veil"></div>
+    </div>
+    <div class="whiteout" id="whiteout"></div>
+    <div class="end" id="end">
+      <div class="head">
+        <p class="lede pen" id="msgTitle" style="--pen:1.6s">We look forward to seeing you.</p>
+        <h2 class="caps phrase" data-ink style="--d:1.2s"><span class="sr">It starts with all of you</span><span aria-hidden="true"><span class="w">It starts</span><span class="it pen" style="--d:2.1s;--pen:1.4s">with</span><span class="w" style="--d:2.7s">all of you</span></span></h2>
+      </div>
+      <div></div>
+      <div class="foot">
+        <div class="count rise" id="count" style="--d:3.6s" aria-label="Time until the engagement">
+          <div><b id="cd-d">00</b><span>days</span></div>
+          <div><b id="cd-h">00</b><span>hours</span></div>
+          <div><b id="cd-m">00</b><span>minutes</span></div>
+          <div><b id="cd-s">00</b><span>seconds</span></div>
+        </div>
+        <p class="when rise" style="--d:4s">Friday, 11 December 2026 at 7:30 PM</p>
+        <button class="linkish rise" style="--d:4.3s" type="button" id="changeAnswer">Change my answer</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.body.classList.add('locked');
+
+  /* letters for the settling capitals */
+  for (const h of $$('[data-ink]')) {
+    h.classList.add('ink');
+    const targets = $$('.w', h); if (!targets.length) targets.push(h);
+    let i = 0;
+    for (const w of targets) {
+      const text = w.textContent; w.textContent = '';
+      for (const c of text) { const s = document.createElement('span'); s.className = 'ch'; s.style.setProperty('--i', i++); s.textContent = c; w.append(s); }
+    }
+  }
+
+  /* place an image box so it covers its frame, like object-fit: cover */
+  function cover(box, iw, ih){
+    const f = box.parentElement.getBoundingClientRect(), s = Math.max(f.width / iw, f.height / ih);
+    const w = iw * s, h = ih * s;
+    Object.assign(box.style, { width: w + 'px', height: h + 'px', left: (f.width - w) / 2 + 'px', top: (f.height - h) / 2 + 'px' });
+    return { w, h, x: (f.width - w) / 2, y: (f.height - h) / 2 };
+  }
+
+  /* pearl frame around the arch */
+  function pearls(svg, w, h, pad, rect){
+    const W = w + pad * 2, H = h + pad * 2, r = W / 2;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const shape = (o) => rect ? `M ${pad - o} ${pad - o} H ${W - pad + o} V ${H - pad + o} H ${pad - o} Z`
+      : `M ${pad - o} ${H - pad + o} L ${pad - o} ${r} A ${r - pad + o} ${r - pad + o} 0 0 1 ${W - pad + o} ${r} L ${W - pad + o} ${H - pad + o} Z`;
+    const outer = shape(7), line = shape(1.5);
+    svg.innerHTML = `<defs><radialGradient id="pg" cx="35%" cy="32%" r="70%"><stop offset="0" stop-color="#fffdf7"/><stop offset=".55" stop-color="#ece5d3"/><stop offset="1" stop-color="#c4a58c"/></radialGradient></defs>
+      <path d="${line}" fill="none" stroke="#c9a98a" stroke-width="1"/><path id="pp" d="${outer}" fill="none"/>`;
+    const p = svg.querySelector('#pp'), L = p.getTotalLength(), n = Math.round(L / 10.5);
+    let g = '';
+    for (let k = 0; k < n; k++) { const pt = p.getPointAtLength(k / n * L); const big = k % 4 === 0; g += `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="${big ? 3.1 : 2.2}" fill="url(#pg)" stroke="#b08f78" stroke-width=".35"/>`; }
+    svg.insertAdjacentHTML('beforeend', g);
+  }
+
+  /* personal line: ?to=Name or #for-Name */
+  let guest = new URLSearchParams(location.search).get('to');
+  const hm = location.hash.match(/^#for-([A-Za-z-]{1,40})$/);
+  if (!guest && hm) guest = hm[1].replace(/-/g, ' ');
+  if (guest) { guest = guest.trim().slice(0, 40); $('#guestName').textContent = guest; $('#forLine').hidden = false; }
+
+  /* ---------- the walk film, drawn frame by frame from scroll position ---------- */
+  const FRAMES = 95, path = (i) => `assets/w/${String(i + 1).padStart(3, "0")}.webp`;
+  const WALK_FROM = .06, WALK_TO = .82;
+  const canvas = $('#film'), ctx = canvas.getContext('2d'), arch = $('#arch');
+  const imgs = new Array(FRAMES); let current = -1, wanted = 0;
+  function load(i){ if (imgs[i]) return imgs[i]; const im = new Image(); im.decoding = 'async'; im.src = path(i); im.onload = () => { if (i === wanted || current < 0) draw(); }; return imgs[i] = im; }
+  load(0); load(FRAMES - 1);
+  function loadAll(){ for (let i = 1; i < FRAMES - 1; i++) load(i); }
+  function size(){
+    const r = arch.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(r.width * dpr); canvas.height = Math.round(r.height * dpr); current = -1; draw();
+    pearls($('#archPearls'), r.width, r.height, 14);
+    const k = $('#sketch').getBoundingClientRect(); pearls($('#sketchPearls'), k.width, k.height, 14, true);
+  }
+  function nearestLoaded(i){ for (let d = 0; d < FRAMES; d++) { for (const j of [i - d, i + d]) { const im = imgs[j]; if (im && im.complete && im.naturalWidth) return im; } } return null; }
+  function draw(){
+    const im = nearestLoaded(wanted); if (!im) return;
+    const cw = canvas.width, ch = canvas.height, s = Math.max(cw / im.naturalWidth, ch / im.naturalHeight);
+    const w = im.naturalWidth * s, h = im.naturalHeight * s;
+    ctx.drawImage(im, (cw - w) / 2, (ch - h) / 2, w, h); current = wanted;
+  }
+
+  /* chapters are written in and out with the scroll */
+  const walk = $('#walk'), chapters = $$('.zone > div');
+  const clamp = (v) => Math.min(1, Math.max(0, v));
+  function setOn(el, on){
+    if (el.classList.contains('show') === on) return;
+    el.classList.toggle('show', on);
+    clearTimeout(el._off);
+    const parts = [el, ...$$('.ink', el)];
+    if (on) { parts.forEach((x) => x.classList.remove('on')); void el.offsetWidth; parts.forEach((x) => x.classList.add('on')); }
+    else el._off = setTimeout(() => parts.forEach((x) => x.classList.remove('on')), 450);
+  }
+  function onScroll(){
+    const r = walk.getBoundingClientRect(), span = walk.offsetHeight - innerHeight;
+    const p = clamp(-r.top / span);
+    wanted = Math.round(clamp((p - WALK_FROM) / (WALK_TO - WALK_FROM)) * (FRAMES - 1));
+    if (wanted !== current) draw();
+    const live = r.top < innerHeight * .5 && r.bottom > innerHeight * .5;
+    for (const c of chapters) setOn(c, live && p >= +c.dataset.in && p < +c.dataset.out);
+    const k = $('#sketch').getBoundingClientRect();
+    const q = clamp((innerHeight * .78 - k.top) / (innerHeight * .62));
+    $('#sketchColor').style.setProperty('--r', (-24 + q * 124).toFixed(1));
+  }
+  let ticking = false;
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); } }, { passive: true });
+
+  /* sections write themselves in when they come into view */
+  const io = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { e.target.classList.add('on'); $$('.ink', e.target).forEach((x) => x.classList.add('on')); io.unobserve(e.target); } }, { threshold: .3 });
+  $$('.reveal').forEach((s) => io.observe(s));
+  new IntersectionObserver((es) => es.forEach((e) => $('#hero').classList.toggle('off', !e.isIntersecting))).observe($('#hero'));
+
+  /* ---------- music: the whole song, from the first note ---------- */
+  const song = $('#song'), sound = $('#sound');
+  function fade(to, ms){ const from = song.volume, t0 = performance.now(); (function f(t){ const k = Math.min(1, (t - t0) / ms); song.volume = from + (to - from) * k; if (k < 1) requestAnimationFrame(f); })(t0); }
+  function startSong(){ song.currentTime = 0; song.volume = 0; const pr = song.play(); if (pr && pr.catch) pr.catch(() => {}); sound.classList.add('on'); fade(.9, 2500); }
+  sound.addEventListener('click', () => {
+    if (song.paused) { song.play().catch(() => {}); sound.classList.remove('muted'); sound.setAttribute('aria-label', 'Pause music'); }
+    else { song.pause(); sound.classList.add('muted'); sound.setAttribute('aria-label', 'Play music'); }
+  });
+
+  /* ---------- opening: tap, the seal cracks and falls, light pours out, the paper ---------- */
+  const opening = $('#opening'), scene = $('#scene'), seal = $('#seal');
+  function layoutOpening(){
+    const b = cover(scene, 941, 1672);
+    opening.style.setProperty('--sx', b.x + b.w * .503 + 'px'); opening.style.setProperty('--sy', b.y + b.h * .589 + 'px');
+    $('#spot').style.setProperty('--sx', b.x + b.w * .503 + 'px'); $('#spot').style.setProperty('--sy', b.y + b.h * .589 + 'px');
+  }
+  if (guest) requestAnimationFrame(() => $$('#forLine .pen').forEach((x) => x.classList.add('on')));
+  let opened = false;
+  function heroOn(){ const h = $('#hero'); h.classList.add('on'); $$('.ink', h).forEach((x) => x.classList.add('on')); }
+  function finishOpen(){ opening.hidden = true; document.body.classList.remove('locked'); }
+  function open(){
+    if (opened) return; opened = true;
+    startSong(); loadAll(); window.scrollTo(0, 0); size(); onScroll();
+    if (navigator.vibrate) try { navigator.vibrate(14); } catch (_) {}
+    if (reduce) { finishOpen(); heroOn(); return; }
+    const E = 'cubic-bezier(.2,.7,.2,1)';
+    $$('.ripple, .touch', seal).forEach((x) => x.style.display = 'none');
+    $('#forLine').style.opacity = 0;
+    const whole = $('#sealWhole'); whole.style.animation = 'none';
+    const sealedArt = $('#sealedArt');
+    // 1. a press
+    whole.animate([{ transform: 'scale(1)' }, { transform: 'scale(.95)' }, { transform: 'scale(1.0)' }], { duration: 260, easing: 'ease-out' });
+    // 2. the crack, glowing from inside
+    const crack = $('#crack'), cp = crack.querySelector('path');
+    crack.style.opacity = 1; cp.style.strokeDasharray = 1;
+    cp.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 380, delay: 200, easing: 'cubic-bezier(.6,0,.4,1)', fill: 'both' });
+    // the painted seal underneath is replaced by our two halves
+    setTimeout(() => { sealedArt.style.visibility = 'hidden'; }, 180);
+    // 3. halves part and fall, crumbs scatter
+    const L = $('.left', whole), R = $('.right', whole);
+    const fall = { duration: 1250, delay: 640, easing: 'cubic-bezier(.45,0,.85,.55)', fill: 'forwards' };
+    L.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(-9%,3%) rotate(-7deg)', opacity: 1, offset: .18 }, { transform: 'translate(-34%,190%) rotate(-38deg)', opacity: 0 }], fall);
+    R.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(9%,2%) rotate(8deg)', opacity: 1, offset: .18 }, { transform: 'translate(30%,175%) rotate(44deg)', opacity: 0 }], fall);
+    crack.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, delay: 700, fill: 'forwards' });
+    $('.glint', whole).style.display = 'none';
+    for (let k = 0; k < 9; k++) {
+      const c = document.createElement('span'); c.className = 'crumb'; seal.append(c);
+      const a = (-90 + (Math.random() - .5) * 160) * Math.PI / 180, d = 18 + Math.random() * 34, sz = .5 + Math.random() * .8;
+      c.animate([{ transform: `translate(-50%,-50%) scale(${sz})`, opacity: 1 },
+                 { transform: `translate(calc(-50% + ${Math.cos(a) * d}px), calc(-50% + ${Math.sin(a) * d}px)) scale(${sz}) rotate(90deg)`, opacity: 1, offset: .35 },
+                 { transform: `translate(calc(-50% + ${Math.cos(a) * d * 1.6}px), calc(-50% + ${Math.sin(a) * d + 260}px)) scale(${sz}) rotate(220deg)`, opacity: 0 }],
+                { duration: 1300 + Math.random() * 300, delay: 680, easing: 'cubic-bezier(.3,.1,.7,1)', fill: 'both' });
+    }
+    // 4. warm light pours out of the broken seal and becomes the paper
+    $('#light').animate([{ transform: 'scale(0)', opacity: 0 }, { transform: 'scale(.012)', opacity: 1, offset: .12 }, { transform: 'scale(.06)', opacity: 1, offset: .45 }, { transform: 'scale(1.1)', opacity: 1 }],
+      { duration: 2100, delay: 560, easing: 'cubic-bezier(.55,0,.6,1)', fill: 'forwards' });
+    scene.animate([{ transform: 'scale(1)', filter: 'brightness(1)' }, { transform: 'scale(1.42)', filter: 'brightness(1.25)' }], { duration: 2600, delay: 450, easing: 'cubic-bezier(.5,0,.2,1)', fill: 'forwards' });
+    $('#spot').animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: 500, fill: 'forwards' });
+    $('#wash').animate([{ opacity: 0 }, { opacity: 1 }], { duration: 700, delay: 2050, easing: 'ease-in', fill: 'forwards' });
+    setTimeout(() => { heroOn(); }, 2250);
+    setTimeout(() => {
+      opening.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: 'forwards' }).onfinish = finishOpen;
+    }, 2800);
+  }
+  $('#tapzone').addEventListener('click', open);
+  layoutOpening(); size(); onScroll();
+  addEventListener('resize', () => { layoutOpening(); size(); onScroll(); layoutFinale(); });
+
+  /* ---------- countdown to Friday 11 December 2026, 7:30 PM Cairo ---------- */
+  const START = new Date('2026-12-11T19:30:00+02:00');
+  const pad = (n) => String(n).padStart(2, '0');
+  function tick(){
+    let s = Math.max(0, Math.floor((START - Date.now()) / 1000));
+    const d = Math.floor(s / 86400); s -= d * 86400; const h = Math.floor(s / 3600); s -= h * 3600; const m = Math.floor(s / 60); s -= m * 60;
+    $('#cd-d').textContent = d; $('#cd-h').textContent = pad(h); $('#cd-m').textContent = pad(m); $('#cd-s').textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- RSVP (preview: kept in this browser only) ---------- */
+  const form = $('#rsvpForm'), err = $('#formError'), rsvp = $('#rsvp'), finale = $('#finale'), ring = $('#ring'), ringStill = $('#ringStill');
+  if (guest && !/\s/.test(guest)) form.firstName.value = guest;
+  const lines = {
+    yes: (n) => `We look forward to seeing you, ${n}.`,
+    no:  (n) => `We'll miss you, ${n}. Thank you for letting us know.`
+  };
+  const finMedia = $('#finMedia');
+  function layoutFinale(){ if (!finale.hidden) cover(finMedia, 720, 1280); }
+  let anims = [], timers = [];
+  function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
+  function stopAll(){ timers.forEach(clearTimeout); timers = []; anims.forEach((a) => a.cancel()); anims = []; ring.pause(); }
+  function endState(){
+    finale.classList.add('after'); ring.hidden = true; ringStill.hidden = true;
+    $$('.pen, .rise, .ink', $('#end')).forEach((x) => x.classList.add('on'));
+  }
+  function resetEnd(){
+    finale.classList.remove('after'); ring.hidden = false; ringStill.hidden = false;
+    $$('.pen, .rise, .ink', $('#end')).forEach((x) => x.classList.remove('on'));
+  }
+  function showFinale(d, play){
+    stopAll(); resetEnd();
+    $('#msgTitle').textContent = lines[d.attending](d.firstName);
+    rsvp.hidden = true; finale.hidden = false; layoutFinale();
+    if (!play || reduce) { endState(); return; }
+    finale.scrollIntoView({ block: 'start' });
+    document.body.classList.add('locked');
+    ring.preload = 'auto'; ring.currentTime = 0;
+    const pr = ring.play(); if (pr && pr.catch) pr.catch(() => shine());
+    let shone = false;
+    function shine(){
+      if (shone) return; shone = true; ring.pause();
+      const star = $('#star'), flare = $('#flare'), white = $('#whiteout');
+      // the diamond catches the light, twice, then blooms
+      anims.push(star.animate([
+        { opacity: 0, transform: 'scale(.15) rotate(0deg)' },
+        { opacity: 1, transform: 'scale(.55) rotate(12deg)', offset: .22 },
+        { opacity: .7, transform: 'scale(.3) rotate(22deg)', offset: .36 },
+        { opacity: 1, transform: 'scale(.85) rotate(34deg)', offset: .55 },
+        { opacity: 1, transform: 'scale(4.5) rotate(60deg)' }], { duration: 2000, easing: 'cubic-bezier(.4,0,.6,1)', fill: 'forwards' }));
+      anims.push(flare.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: .9, transform: 'scale(.02)', offset: .35 }, { opacity: 1, transform: 'scale(.05)', offset: .6 }, { opacity: 1, transform: 'scale(1)' }],
+        { duration: 2300, delay: 300, easing: 'cubic-bezier(.6,0,.7,1)', fill: 'forwards' }));
+      anims.push(white.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 2100, easing: 'ease-in', fill: 'forwards' }));
+      // in the white, the room changes: now they are dancing
+      later(() => {
+        anims.forEach((a) => a.cancel()); anims = [];
+        white.style.opacity = 1; finale.classList.add('after'); ring.hidden = true; ringStill.hidden = true;
+        anims.push(white.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 2200, easing: 'cubic-bezier(.3,0,.2,1)', fill: 'forwards' }));
+        white.style.opacity = '';
+        later(() => { $$('.pen, .rise, .ink', $('#end')).forEach((x) => x.classList.add('on')); }, 900);
+        later(() => document.body.classList.remove('locked'), 2600);
+      }, 2800);
+    }
+    ring.ontimeupdate = () => { if (ring.currentTime >= 6.45) shine(); };
+    ring.onended = shine; ring.onerror = shine;
+    later(shine, 12000);
+  }
+  form.addEventListener('input', () => { err.textContent = ''; });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const firstName = form.firstName.value.trim(), lastName = form.lastName.value.trim();
+    const att = form.querySelector('input[name="attending"]:checked');
+    if (!firstName || !lastName) { err.textContent = 'Please write your first and last name.'; (firstName ? form.lastName : form.firstName).focus(); return; }
+    if (!att) { err.textContent = 'Please choose whether you can come.'; return; }
+    const d = { firstName, lastName, attending: att.value, at: new Date().toISOString() };
+    try { localStorage.setItem('on-rsvp', JSON.stringify(d)); } catch (_) {}
+    toFinale(d);
+  });
+  /* from the form to the film: the page fades to night, "Thank you" is written, the film rises out of the dark */
+  function toFinale(d){
+    if (reduce) { showFinale(d, true); return; }
+    const c = $('#curtain'), t = $('#thanks'), send = form.querySelector('.send'), inner = $('.rsvp-inner');
+    send.disabled = true;
+    ring.preload = 'auto'; try { ring.load(); } catch (_) {}
+    t.textContent = `Thank you, ${d.firstName}`; t.classList.remove('on');
+    c.hidden = false;
+    const out = inner.animate([{ opacity: 1, transform: 'none', filter: 'blur(0)' }, { opacity: 0, transform: 'translateY(-14px)', filter: 'blur(6px)' }], { duration: 800, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+    c.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1000, delay: 150, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+    setTimeout(() => t.classList.add('on'), 900);
+    setTimeout(() => {
+      showFinale(d, true);
+      out.cancel(); send.disabled = false;
+      finMedia.animate([{ transform: 'scale(1.07)' }, { transform: 'scale(1)' }], { duration: 3200, easing: 'cubic-bezier(.2,.6,.2,1)' });
+      t.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: 'forwards' });
+      c.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 1500, delay: 250, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' }).onfinish = () => { c.hidden = true; c.getAnimations().forEach((a) => a.cancel()); t.getAnimations().forEach((a) => a.cancel()); t.classList.remove('on'); };
+    }, 2900);
+  }
+  $('#changeAnswer').addEventListener('click', () => {
+    stopAll(); document.body.classList.remove('locked');
+    finale.hidden = true; rsvp.hidden = false; rsvp.scrollIntoView({ block: 'start' }); form.firstName.focus({ preventScroll: true });
+  });
+  try {
+    const saved = JSON.parse(localStorage.getItem('on-rsvp') || 'null');
+    if (saved && lines[saved.attending]) {
+      form.firstName.value = saved.firstName; form.lastName.value = saved.lastName;
+      const r = form.querySelector(`input[value="${saved.attending}"]`); if (r) r.checked = true;
+      showFinale(saved, false);
+    }
+  } catch (_) {}
+})();
+</script>
+
+</body>
+</html>
