@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f3eee2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Caveat:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,500;0,600;1,400;1,500&text=0123456789&display=swap">
 <style>
 /* Omar and Noha: ivory paper, burgundy ink, dusty rose, champagne pearls.
@@ -27,6 +27,7 @@
   --night:#120c08;
   --serif:"Cormorant Infant","Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
   --script:"Pinyon Script","Snell Roundhand",cursive;
+  --hand:"Caveat","Segoe Print","Bradley Hand",cursive;
   --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .38  0 0 0 0 .26  0 0 0 0 .22  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   color-scheme:light;
 }
@@ -241,6 +242,38 @@ legend{margin-bottom:9px;padding:0}
 .linkish:hover{color:#fff}
 .finale :focus-visible{outline-color:#f3e9d6}
 
+/* ---------- notes: a card to write on, under the countdown ---------- */
+.foot-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 4px}
+.notecue{display:inline-flex;align-items:center;gap:6px;color:#f3e3cf;text-decoration:none;font-family:var(--hand);font-size:24px;font-weight:600;line-height:1;min-height:44px;padding:6px 14px}
+.notecue svg{width:16px;height:16px;animation:nudge 2.2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(-1px)}50%{transform:translateY(4px)}}
+.notes{position:relative;padding:clamp(70px,11svh,110px) 18px calc(env(safe-area-inset-bottom,0px) + clamp(70px,11svh,110px));background:var(--paper);overflow:hidden}
+.notecard{position:relative;max-width:420px;margin:0 auto;padding:46px 24px 26px;background:#fcf8f0;rotate:-.8deg;
+  box-shadow:0 1px 0 rgba(58,21,26,.06),0 14px 30px -12px rgba(58,21,26,.28),0 30px 60px -30px rgba(58,21,26,.25);
+  background-image:linear-gradient(90deg,transparent 30px,rgba(180,135,138,.35) 30px,rgba(180,135,138,.35) 31px,transparent 31px)}
+.notecard::before{content:"";position:absolute;left:50%;top:-14px;width:118px;height:30px;translate:-50% 0;rotate:2.5deg;
+  background:rgba(201,169,138,.55);box-shadow:0 1px 2px rgba(58,21,26,.12);
+  border-left:1px dashed rgba(255,255,255,.35);border-right:1px dashed rgba(255,255,255,.35)}
+.notecard h2{font-family:var(--hand);font-weight:700;font-size:clamp(32px,9vw,40px);line-height:1.02;color:var(--olive);text-align:center;text-wrap:balance}
+.notecard .from{margin-top:12px;text-align:center;font-family:var(--hand);font-size:24px;font-weight:500;color:#8a6a5c}
+.notecard .from b{font-weight:700;color:var(--ink)}
+.notecard label{display:block;margin:24px 0 2px;font-family:var(--hand);font-size:23px;font-weight:600;color:var(--olive)}
+.notecard textarea{display:block;width:100%;min-height:128px;resize:vertical;border:0;padding:2px 2px 0;background:transparent;
+  font-family:var(--hand);font-size:25px;font-weight:500;line-height:32px;color:var(--ink);
+  background-image:repeating-linear-gradient(180deg,transparent 0 31px,rgba(110,26,38,.2) 31px 32px);background-attachment:local}
+.notecard textarea::placeholder{color:rgba(58,21,26,.35)}
+.notecard textarea:focus{outline:none;background-color:rgba(255,250,240,.6)}
+.notecard textarea:focus-visible{box-shadow:0 0 0 2px rgba(110,26,38,.25)}
+.notecard .send{width:100%;margin-top:24px}
+.notecard .error{margin:12px 0 0;min-height:22px}
+.notecard .sent{text-align:center;padding:12px 0 6px}
+.notecard .sent p{font-family:var(--hand);font-size:30px;font-weight:600;line-height:1.15;color:var(--olive)}
+.notecard .sent .again{margin-top:14px;background:none;border:0;min-height:44px;padding:6px 14px;cursor:pointer;font-family:var(--hand);font-size:23px;color:#8a6a5c;text-decoration:underline;text-underline-offset:4px}
+.notecard.flying{animation:fly .9s cubic-bezier(.5,0,.75,0) forwards}
+@keyframes fly{to{transform:translateY(-38px) rotate(3deg) scale(.96);opacity:0}}
+.notecard.landing{animation:land .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes land{from{transform:translateY(24px) rotate(-2deg);opacity:0}}
+
 /* music */
 .sound{position:fixed;z-index:60;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(110,26,38,.25);background:rgba(243,238,226,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .6s}
@@ -433,7 +466,30 @@ legend{margin-bottom:9px;padding:0}
           <div><b id="cd-s">00</b><span>seconds</span></div>
         </div>
         <p class="when rise" style="--d:4s">Friday, 11 December 2026 at 7:30 PM</p>
+        <div class="foot-actions">
         <button class="linkish rise" style="--d:4.3s" type="button" id="changeAnswer">Change my answer</button>
+        <a class="notecue rise" style="--d:4.6s" href="#notes">Leave us a note<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A note for the couple, under the countdown -->
+  <section class="notes" id="notes" hidden aria-labelledby="notesTitle">
+    <div class="notecard" id="notecard">
+      <form id="noteForm" novalidate>
+        <h2 id="notesTitle">Leave a note for the couple, and a piece of advice</h2>
+        <p class="from">from <b id="noteFrom"></b></p>
+        <label for="noteText">A note for Omar &amp; Noha</label>
+        <textarea id="noteText" name="note" maxlength="1200" placeholder="Something sweet…"></textarea>
+        <label for="adviceText">A piece of advice</label>
+        <textarea id="adviceText" name="advice" maxlength="1200" placeholder="For the years ahead…"></textarea>
+        <p class="error" id="noteError" role="alert"></p>
+        <button class="send" type="submit" id="noteSend">Send with love</button>
+      </form>
+      <div class="sent" id="noteSent" hidden aria-live="polite">
+        <p id="noteThanks">Thank you! Your note is on its way to Omar &amp; Noha.</p>
+        <button class="again" type="button" id="noteAgain">Write another note</button>
       </div>
     </div>
   </section>
@@ -616,7 +672,23 @@ legend{margin-bottom:9px;padding:0}
   }
   tick(); setInterval(tick, 1000);
 
-  /* ---------- RSVP (preview: kept in this browser only) ---------- */
+  /* ---------- the private storage (a Google Apps Script web app writing to the couple's sheet) ---------- */
+  const API = "https://script.google.com/macros/s/AKfycbyKdneoXEcTd1LglPvDm9cS2C0_iHFT6pQ3Qlfov_mrj-b3d3w-7CbccM0OVNonoQ1pkA/exec";
+  async function api(payload){
+    if (!API) return { ok: true, preview: true };
+    const r = await fetch(API, { method: 'POST', body: JSON.stringify(payload) });   // text/plain: no preflight
+    return r.json();
+  }
+  function queue(){ try { return JSON.parse(localStorage.getItem('on-queue') || '[]'); } catch (_) { return []; } }
+  function setQueue(q){ try { localStorage.setItem('on-queue', JSON.stringify(q)); } catch (_) {} }
+  async function deliver(payload){
+    try { const r = await api(payload); if (!r || !r.ok) throw new Error(r && r.error || 'not saved'); return true; }
+    catch (_) { const q = queue().filter((x) => !(x.action === 'rsvp' && payload.action === 'rsvp')); q.push(payload); setQueue(q); return false; }
+  }
+  async function flush(){ const q = queue(); if (!q.length) return; setQueue([]); for (const p of q) await deliver(p); }
+  addEventListener('online', flush); setTimeout(flush, 4000);
+
+  /* ---------- RSVP ---------- */
   const form = $('#rsvpForm'), err = $('#formError'), rsvp = $('#rsvp'), finale = $('#finale'), ring = $('#ring'), ringStill = $('#ringStill');
   if (guest && !/\s/.test(guest)) form.firstName.value = guest;
   const lines = {
@@ -640,6 +712,7 @@ legend{margin-bottom:9px;padding:0}
     stopAll(); resetEnd();
     $('#msgTitle').textContent = lines[d.attending](d.firstName);
     rsvp.hidden = true; finale.hidden = false; layoutFinale();
+    me = d; $('#noteFrom').textContent = `${d.firstName} ${d.lastName}`; $('#notes').hidden = false;
     if (!play || reduce) { endState(); return; }
     finale.scrollIntoView({ block: 'start' });
     document.body.classList.add('locked');
@@ -682,6 +755,7 @@ legend{margin-bottom:9px;padding:0}
     if (!att) { err.textContent = 'Please choose whether you can come.'; return; }
     const d = { firstName, lastName, attending: att.value, at: new Date().toISOString() };
     try { localStorage.setItem('on-rsvp', JSON.stringify(d)); } catch (_) {}
+    deliver({ action: 'rsvp', firstName, lastName, attending: d.attending, to: guest || '' });
     toFinale(d);
   });
   /* from the form to the film: the page fades to night, "Thank you" is written, the film rises out of the dark */
@@ -705,8 +779,28 @@ legend{margin-bottom:9px;padding:0}
   }
   $('#changeAnswer').addEventListener('click', () => {
     stopAll(); document.body.classList.remove('locked');
-    finale.hidden = true; rsvp.hidden = false; rsvp.scrollIntoView({ block: 'start' }); form.firstName.focus({ preventScroll: true });
+    finale.hidden = true; $('#notes').hidden = true; rsvp.hidden = false; rsvp.scrollIntoView({ block: 'start' }); form.firstName.focus({ preventScroll: true });
   });
+  /* ---------- notes ---------- */
+  let me = null;
+  const noteForm = $('#noteForm'), noteErr = $('#noteError'), card = $('#notecard');
+  noteForm.addEventListener('input', () => { noteErr.textContent = ''; });
+  noteForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); if (!me) return;
+    const note = $('#noteText').value.trim(), advice = $('#adviceText').value.trim();
+    if (!note && !advice) { noteErr.textContent = 'Write a note or a piece of advice first.'; $('#noteText').focus(); return; }
+    const btn = $('#noteSend'); btn.disabled = true; btn.textContent = 'Sending…';
+    let ok = false;
+    try { const r = await api({ action: 'note', firstName: me.firstName, lastName: me.lastName, note, advice }); ok = !!(r && r.ok); } catch (_) { ok = false; }
+    btn.disabled = false; btn.textContent = 'Send with love';
+    if (!ok) { noteErr.textContent = "Your note couldn't be sent. Check your connection and try again."; return; }
+    try { localStorage.setItem('on-notes', String((+localStorage.getItem('on-notes') || 0) + 1)); } catch (_) {}
+    const done = () => { noteForm.hidden = true; $('#noteSent').hidden = false; $('#noteThanks').textContent = `Thank you, ${me.firstName}! Your note is on its way to Omar & Noha.`; card.classList.remove('flying'); card.classList.add('landing'); };
+    if (reduce) done(); else { card.classList.remove('landing'); card.classList.add('flying'); setTimeout(done, 850); }
+  });
+  $('.notecue').addEventListener('click', (e) => { e.preventDefault(); $('#notes').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); });
+  $('#noteAgain').addEventListener('click', () => { $('#noteText').value = ''; $('#adviceText').value = ''; $('#noteSent').hidden = true; noteForm.hidden = false; card.classList.remove('landing'); void card.offsetWidth; card.classList.add('landing'); $('#noteText').focus(); });
+
   try {
     const saved = JSON.parse(localStorage.getItem('on-rsvp') || 'null');
     if (saved && lines[saved.attending]) {

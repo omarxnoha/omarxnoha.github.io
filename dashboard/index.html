@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>For Omar and Noha</title>
+<meta name="theme-color" content="#f3eee2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Caveat:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,500;0,600;1,500&text=0123456789&display=swap">
+<style>
+/* The couple's own page: who is coming, and every note their guests wrote. Same paper, ink and type as the invitation. */
+:root{
+  --paper:#f3eee2; --paper-2:#ebe4d3; --card:#fcf8f0; --ink:#3a151a; --wine:#6e1a26; --sage:#c9a98a; --rose:#b4878a; --muted:#8a6a5c;
+  --serif:"Cormorant Infant","Cormorant Garamond",Garamond,serif; --script:"Pinyon Script",cursive; --hand:"Caveat","Segoe Print",cursive;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .38  0 0 0 0 .26  0 0 0 0 .22  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--paper);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.45;font-weight:500;-webkit-font-smoothing:antialiased;font-feature-settings:"lnum" 1}
+body::before{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;background-image:var(--grain);background-size:240px;opacity:.1}
+h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--wine);outline-offset:3px}
+.caps{text-transform:uppercase;letter-spacing:.07em;font-weight:500;line-height:1}
+.it{font-style:italic;text-transform:none;letter-spacing:0}
+.small-caps{font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--wine)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border:0;background:var(--ink);color:#f6efe4;cursor:pointer;
+  font-size:14px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;transition:background-color .25s}
+.btn:hover{background:var(--wine)}
+.btn.line{background:transparent;color:var(--wine);border:1px solid var(--wine)}
+.btn.line:hover{background:var(--wine);color:#f6efe4}
+
+/* ---------- the gate ---------- */
+.gate{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;padding:24px}
+.gate-card{width:100%;max-width:380px;text-align:center;padding:48px 28px 36px;position:relative}
+.gate-card::before,.gate-card::after{content:"";position:absolute;inset:0;border:1px solid rgba(110,26,38,.28);pointer-events:none}
+.gate-card::after{inset:6px;border-color:rgba(110,26,38,.14)}
+.mono{font-size:40px;color:var(--wine);letter-spacing:.04em}
+.mono .it{font-size:.9em;padding:0 .1em}
+.gate .for{margin-top:6px;font-family:var(--script);font-size:40px;line-height:1.2;padding:0 .3em}
+.gate p.hint{margin-top:8px;font-style:italic;color:var(--muted)}
+.gate form{margin-top:28px;display:grid;gap:12px;text-align:left}
+.gate label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--wine)}
+.gate input{height:52px;border:1px solid var(--sage);background:var(--card);padding:0 16px;font-size:21px;border-radius:2px}
+.gate input:focus{outline:none;border-color:var(--wine);box-shadow:0 0 0 3px rgba(110,26,38,.12)}
+.gate .err{min-height:24px;color:#a3243a;font-style:italic;text-align:center}
+
+/* ---------- the page ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 56px) 20px 90px}
+header.top{text-align:center;display:grid;justify-items:center}
+header.top .names{font-size:clamp(44px,12vw,72px)}
+header.top .names .it{display:block;font-size:.6em;color:var(--wine);margin:.04em 0}
+header.top .sub{margin-top:18px;font-style:italic;font-size:clamp(21px,5.6vw,25px)}
+header.top .date{margin-top:4px;letter-spacing:.08em}
+.tools{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.updated{width:100%;text-align:center;font-style:italic;font-size:17px;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:48px auto 0;max-width:640px;border-top:1px solid rgba(110,26,38,.2);border-bottom:1px solid rgba(110,26,38,.2)}
+.stat{text-align:center;padding:22px 6px}
+.stat + .stat{border-left:1px solid rgba(110,26,38,.14)}
+.stat b{display:block;font-size:clamp(46px,13vw,72px);font-weight:500;line-height:1;color:var(--wine)}
+.stat span{display:block;margin-top:8px;font-style:italic;font-size:clamp(17px,4.4vw,20px)}
+
+section.block{margin-top:72px}
+.block > h2{text-align:center;font-size:clamp(32px,8.6vw,44px)}
+.block > h2 .it{font-size:.74em;padding:0 .15em}
+.block > .lede{text-align:center;margin-top:10px;font-style:italic;color:var(--muted)}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.chip{min-height:44px;padding:0 18px;border:1px solid rgba(110,26,38,.3);background:transparent;cursor:pointer;font-style:italic;font-size:19px;border-radius:999px}
+.chip[aria-pressed="true"]{background:var(--wine);color:#f6efe4;border-color:var(--wine)}
+.search{display:block;width:min(100%,360px);margin:14px auto 0;height:48px;border:1px solid var(--sage);background:var(--card);padding:0 16px;font-size:20px;border-radius:999px}
+.search:focus{outline:none;border-color:var(--wine)}
+.guests{list-style:none;margin:26px auto 0;padding:0;max-width:760px;columns:2 300px;column-gap:40px}
+.guests li{break-inside:avoid;display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 2px;border-bottom:1px solid rgba(110,26,38,.12)}
+.guests .who{font-size:21px}
+.guests .who i{display:block;font-size:15px;color:var(--muted)}
+.guests .tag{flex:none;font-style:italic;font-size:16px;padding:2px 12px;border-radius:999px;background:rgba(110,26,38,.09);color:var(--wine)}
+.guests .tag.no{background:rgba(58,21,26,.06);color:var(--muted)}
+.empty{text-align:center;margin-top:28px;font-style:italic;color:var(--muted)}
+
+/* notes: cards pinned on the paper */
+.board{margin:34px auto 0;columns:3 290px;column-gap:26px}
+.note{break-inside:avoid;position:relative;margin:0 0 30px;padding:34px 22px 20px;background:var(--card);rotate:var(--r,0deg);
+  box-shadow:0 1px 0 rgba(58,21,26,.05),0 12px 26px -12px rgba(58,21,26,.26);
+  background-image:repeating-linear-gradient(180deg,transparent 0 31px,rgba(110,26,38,.1) 31px 32px);background-position:0 26px}
+.note::before{content:"";position:absolute;left:50%;top:-11px;width:92px;height:24px;translate:-50% 0;rotate:var(--t,2deg);background:rgba(201,169,138,.55);box-shadow:0 1px 2px rgba(58,21,26,.1)}
+.note:nth-child(3n+2)::before{background:rgba(180,135,138,.45)}
+.note .txt{font-family:var(--hand);font-size:26px;font-weight:500;line-height:32px;white-space:pre-wrap;overflow-wrap:anywhere}
+.note .adv{margin-top:14px}
+.note .adv span{display:block;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--wine);letter-spacing:.02em;line-height:32px}
+.note .sig{margin-top:14px;text-align:right;font-family:var(--hand);font-size:24px;font-weight:700;color:var(--wine)}
+.note .when{display:block;text-align:right;font-style:italic;font-size:14px;color:var(--muted)}
+footer{margin-top:80px;text-align:center;font-family:var(--script);font-size:34px;color:var(--wine)}
+
+.loading{min-height:100svh;display:grid;place-items:center;font-style:italic;color:var(--muted)}
+
+@media print{
+  body::before,.tools,.filters,.search,.guests-block{display:none!important}
+  .wrap{padding-top:0}
+  .board{columns:2}
+  .note{box-shadow:none;border:1px solid rgba(110,26,38,.2);rotate:0deg}
+  section.block{margin-top:30px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<main class="gate" id="gate">
+  <div class="gate-card">
+    <p class="mono caps">O<span class="it">&amp;</span>N</p>
+    <h1 class="for">For Omar &amp; Noha</h1>
+    <p class="hint">Your guests, and every note they left you.</p>
+    <form id="gateForm" novalidate>
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <button class="btn" type="submit" id="openBtn">Open</button>
+      <p class="err" id="gateErr" role="alert"></p>
+    </form>
+  </div>
+</main>
+
+<div class="loading" id="loading" hidden>Opening your notes…</div>
+
+<div class="wrap" id="app" hidden>
+  <header class="top">
+    <h1 class="caps names">Omar<span class="it">and</span>Noha</h1>
+    <p class="sub">your guests, and the notes they left you</p>
+    <p class="date">11 . 12 . 2026 &nbsp;·&nbsp; <span id="togo"></span></p>
+    <div class="tools">
+      <button class="btn line" type="button" id="refresh">Refresh</button>
+      <button class="btn" type="button" id="keep">Save as a keepsake</button>
+      <p class="updated" id="updated"></p>
+    </div>
+  </header>
+
+  <div class="stats" role="group" aria-label="Totals">
+    <div class="stat"><b id="nYes">0</b><span>coming</span></div>
+    <div class="stat"><b id="nNo">0</b><span>can't come</span></div>
+    <div class="stat"><b id="nNotes">0</b><span>notes</span></div>
+  </div>
+
+  <section class="block guests-block" aria-labelledby="gTitle">
+    <h2 class="caps" id="gTitle">The <span class="it">guest</span> List</h2>
+    <div class="filters" role="group" aria-label="Show">
+      <button class="chip" type="button" data-f="yes" aria-pressed="true">Coming</button>
+      <button class="chip" type="button" data-f="no" aria-pressed="false">Can't come</button>
+      <button class="chip" type="button" data-f="all" aria-pressed="false">Everyone</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="Find a name" aria-label="Find a name">
+    <ul class="guests" id="guests"></ul>
+    <p class="empty" id="gEmpty" hidden></p>
+  </section>
+
+  <section class="block" aria-labelledby="nTitle">
+    <h2 class="caps" id="nTitle">Notes <span class="it">and</span> Advice</h2>
+    <p class="lede" id="nLede">Every word your guests wrote for you, kept here.</p>
+    <div class="board" id="board"></div>
+    <p class="empty" id="nEmpty" hidden>No notes yet. When guests write one after their RSVP, it will appear here.</p>
+  </section>
+
+  <footer>with love, from everyone</footer>
+</div>
+
+<script>
+(function(){
+  const API = "https://script.google.com/macros/s/AKfycbyKdneoXEcTd1LglPvDm9cS2C0_iHFT6pQ3Qlfov_mrj-b3d3w-7CbccM0OVNonoQ1pkA/exec";
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const START = new Date('2026-12-11T19:30:00+02:00');
+  let data = null, filter = 'yes', pw = '';
+
+  async function load(password){
+    if (!API) throw new Error('not connected');
+    const r = await fetch(API, { method: 'POST', body: JSON.stringify({ action: 'dashboard', password }) });
+    return r.json();
+  }
+  const errText = { 'wrong password': "That's not the password.", 'locked': 'Too many tries. Please wait 15 minutes.', 'no password set': 'The password has not been set up yet.', 'not connected': 'The dashboard is not connected yet.' };
+
+  async function open(password, quiet){
+    $('#gateErr').textContent = ''; $('#openBtn').disabled = true;
+    if (!quiet) { $('#loading').hidden = false; }
+    try {
+      const r = await load(password);
+      if (!r.ok) throw new Error(r.error);
+      pw = password; try { sessionStorage.setItem('on-dash', password); } catch (_) {}
+      data = r; render(); $('#gate').hidden = true; $('#app').hidden = false;
+    } catch (e) {
+      $('#app').hidden = true; $('#gate').hidden = false;
+      $('#gateErr').textContent = errText[e.message] || "Couldn't reach your notes. Check the connection and try again.";
+      try { sessionStorage.removeItem('on-dash'); } catch (_) {}
+    } finally { $('#loading').hidden = true; $('#openBtn').disabled = false; }
+  }
+
+  function when(iso){ const d = new Date(iso); if (isNaN(d)) return ''; return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) + ', ' + d.toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit' }); }
+  function render(){
+    const g = data.guests || [], n = data.notes || [];
+    $('#nYes').textContent = g.filter((x) => x.answer === 'yes').length;
+    $('#nNo').textContent = g.filter((x) => x.answer === 'no').length;
+    $('#nNotes').textContent = n.length;
+    const days = Math.max(0, Math.ceil((START - Date.now()) / 86400000));
+    $('#togo').textContent = days ? `${days} day${days === 1 ? '' : 's'} to go` : 'tonight';
+    $('#updated').textContent = 'Updated ' + new Date(data.now || Date.now()).toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit' });
+    renderGuests();
+    const board = $('#board'); board.innerHTML = '';
+    $('#nEmpty').hidden = n.length > 0;
+    n.slice().sort((a, b) => new Date(b.at) - new Date(a.at)).forEach((x, i) => {
+      const el = document.createElement('article'); el.className = 'note';
+      el.style.setProperty('--r', ((i * 37) % 5 - 2) * .6 + 'deg'); el.style.setProperty('--t', ((i * 53) % 7 - 3) + 'deg');
+      el.innerHTML = (x.note ? `<p class="txt">${esc(x.note)}</p>` : '') +
+        (x.advice ? `<div class="adv"><span>a piece of advice</span><p class="txt">${esc(x.advice)}</p></div>` : '') +
+        `<p class="sig">${esc(x.first)} ${esc(x.last)}</p><span class="when">${when(x.at)}</span>`;
+      board.append(el);
+    });
+  }
+  function renderGuests(){
+    const q = $('#search').value.trim().toLowerCase();
+    const list = (data.guests || []).filter((x) => filter === 'all' || x.answer === filter)
+      .filter((x) => !q || `${x.first} ${x.last}`.toLowerCase().includes(q))
+      .sort((a, b) => `${a.first} ${a.last}`.localeCompare(`${b.first} ${b.last}`));
+    $('#guests').innerHTML = list.map((x) => `<li><span class="who">${esc(x.first)} ${esc(x.last)}<i>${when(x.at)}${x.changed ? ' · changed their answer' : ''}</i></span><span class="tag ${x.answer === 'no' ? 'no' : ''}">${x.answer === 'yes' ? 'coming' : "can't come"}</span></li>`).join('');
+    const none = !list.length;
+    $('#gEmpty').hidden = !none;
+    $('#gEmpty').textContent = q ? 'No one by that name yet.' : filter === 'no' ? 'Nobody has said they can’t come.' : 'No answers yet. When guests RSVP, they’ll appear here.';
+  }
+
+  $('#gateForm').addEventListener('submit', (e) => { e.preventDefault(); const v = $('#pw').value; if (!v) { $('#gateErr').textContent = 'Enter the password.'; return; } open(v); });
+  document.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => { filter = c.dataset.f; document.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === c))); renderGuests(); }));
+  $('#search').addEventListener('input', renderGuests);
+  $('#refresh').addEventListener('click', () => open(pw, true));
+  $('#keep').addEventListener('click', () => print());
+  let saved = null; try { saved = sessionStorage.getItem('on-dash'); } catch (_) {}
+  if (saved) open(saved);
+})();
+</script>
+</body>
+</html>
