@@ -29,6 +29,7 @@
   --script:"Pinyon Script","Snell Roundhand",cursive;
   --hand:"Caveat","Segoe Print","Bradley Hand",cursive;
   --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .38  0 0 0 0 .26  0 0 0 0 .22  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --vh:1svh;
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -108,7 +109,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
   background:radial-gradient(circle,#fffaf0 0,#fff4dc 9%,rgba(255,231,186,.85) 17%,rgba(255,214,150,.35) 30%,rgba(255,200,130,0) 48%);transform:scale(0);opacity:0}
 .crumb{position:absolute;left:50%;top:50%;width:5%;aspect-ratio:1;border-radius:40% 55% 45% 60%;background:radial-gradient(circle at 35% 30%,#b8322f,#6e1013 70%);z-index:4;opacity:0}
 .wash{position:absolute;inset:0;z-index:6;background:var(--paper);opacity:0;pointer-events:none}
-.forline{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + clamp(48px,9svh,96px));z-index:5;text-align:center;color:#fbf3e4;
+.forline{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + clamp(48px,calc(var(--vh)*9),96px));z-index:5;text-align:center;color:#fbf3e4;
   text-shadow:0 2px 18px rgba(0,0,0,.55);transition:opacity .5s}
 .forline .f{display:table;margin:0 auto;padding:0 .2em;font-style:italic;font-size:22px;line-height:1}
 .forline .script{display:inline-block;padding:0 .2em;font-size:clamp(46px,13vw,64px);color:#fff7ea}
@@ -116,7 +117,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
 .tapzone:focus-visible{outline:1.5px solid #fff3dc;outline-offset:-10px}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate;
+.hero{position:relative;min-height:calc(var(--vh)*100);display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate;
   padding:calc(env(safe-area-inset-top,0px) + 72px) 24px 120px}
 .haze{position:absolute;inset:-20%;z-index:-1;pointer-events:none;
   background:radial-gradient(38% 30% at 30% 30%,rgba(222,190,180,.55),transparent 70%),radial-gradient(40% 32% at 72% 66%,rgba(232,208,160,.5),transparent 70%),radial-gradient(30% 26% at 70% 22%,rgba(214,168,150,.38),transparent 70%);
@@ -134,20 +135,20 @@ h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
 @keyframes drop{0%{background-size:1px 0;background-position:top}50%{background-size:1px 100%;background-position:top}51%{background-position:bottom}100%{background-size:1px 0;background-position:bottom}}
 
 /* ---------- the walk ---------- */
-.walk{position:relative;height:560svh}
-.stage{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden}
+.walk{position:relative;height:calc(var(--vh)*560)}
+.stage{position:sticky;top:0;height:calc(var(--vh)*100);min-height:560px;overflow:hidden}
 .zone{position:absolute;left:0;right:0;display:grid;place-items:center;text-align:center;padding:0 22px}
-.zone.top{top:calc(env(safe-area-inset-top,0px) + 2svh);height:20svh;min-height:112px}
-.zone.bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 1svh);height:21svh;min-height:118px}
+.zone.top{top:calc(env(safe-area-inset-top,0px) + calc(var(--vh)*2));height:calc(var(--vh)*20);min-height:112px}
+.zone.bottom{bottom:calc(env(safe-area-inset-bottom,0px) + calc(var(--vh)*1));height:calc(var(--vh)*21);min-height:118px}
 .zone > div{grid-area:1/1;display:grid;justify-items:center;gap:8px;opacity:0;transition:opacity .7s ease}
 .zone > div.show{opacity:1}
 .zone > div:not(.show){transition-duration:.4s}
-.arch{position:absolute;left:50%;top:max(22svh,120px);translate:-50% 0;height:calc(100svh - max(22svh,120px) - max(23svh,128px));aspect-ratio:.66;max-width:82vw}
+.arch{position:absolute;left:50%;top:max(calc(var(--vh)*22),120px);translate:-50% 0;height:calc(calc(var(--vh)*100) - max(calc(var(--vh)*22),120px) - max(calc(var(--vh)*23),128px));aspect-ratio:.66;max-width:82vw}
 .arch canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:999px 999px 6px 6px}
 .arch .pearls{inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px)}
 
 /* ---------- details ---------- */
-.details{position:relative;padding:clamp(80px,13svh,120px) 24px clamp(70px,11svh,110px);text-align:center;display:grid;justify-items:center}
+.details{position:relative;padding:clamp(80px,calc(var(--vh)*13),120px) 24px clamp(70px,calc(var(--vh)*11),110px);text-align:center;display:grid;justify-items:center}
 .details .small-caps{margin-top:22px}
 .details .when{margin-top:6px;font-style:italic;font-size:clamp(21px,5.8vw,24px)}
 .rule{width:150px;height:14px;margin:34px auto 26px;color:var(--sage)}
@@ -163,7 +164,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
   text-decoration:none;font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:background-color .25s,color .25s}
 .btn-line:hover{background:var(--olive);color:var(--paper)}
 
-.band{position:relative;background:var(--olive);color:#f6ece4;text-align:center;padding:clamp(70px,11svh,100px) 28px;isolation:isolate}
+.band{position:relative;background:var(--olive);color:#f6ece4;text-align:center;padding:clamp(70px,calc(var(--vh)*11),100px) 28px;isolation:isolate}
 .band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.08),transparent 60%)}
 .band .body{max-width:22em;margin:22px auto 0}
 .band .body + .body{margin-top:12px}
@@ -171,7 +172,7 @@ h1,h2,h3,p{margin:0;font-weight:inherit;text-wrap:balance}
 .band :focus-visible{outline-color:#f6ece4}
 
 /* ---------- RSVP ---------- */
-.rsvp{position:relative;padding:clamp(84px,13svh,130px) 22px clamp(84px,12svh,120px)}
+.rsvp{position:relative;padding:clamp(84px,calc(var(--vh)*13),130px) 22px clamp(84px,calc(var(--vh)*12),120px)}
 .rsvp-inner{max-width:420px;margin:0 auto}
 .rsvp-head{text-align:center;display:grid;justify-items:center}
 .mono{font-size:44px;line-height:1;color:var(--olive);letter-spacing:.04em}
@@ -201,7 +202,7 @@ legend{margin-bottom:9px;padding:0}
 .send:active{transform:scale(.985)}
 
 /* ---------- finale: ring, the diamond's light, then the dance and the countdown ---------- */
-.finale{position:relative;height:100svh;min-height:min(600px,100svh);overflow:hidden;isolation:isolate;background:var(--night);color:#f7f0e2}
+.finale{position:relative;height:calc(var(--vh)*100);min-height:min(600px,calc(var(--vh)*100));overflow:hidden;isolation:isolate;background:var(--night);color:#f7f0e2}
 .finale .spill{position:absolute;inset:-60px;background:url(assets/venue-dancing.jpg) center/cover;filter:blur(44px) brightness(.35)}
 .finale .frame{position:absolute;inset:0;margin-inline:auto;overflow:hidden}
 @media (min-aspect-ratio:4/5){.finale .frame{width:auto;height:100%;aspect-ratio:9/16}}
@@ -226,7 +227,7 @@ legend{margin-bottom:9px;padding:0}
   background:radial-gradient(ellipse at 50% 55%,#2a1210,var(--night) 70%);color:#f3e7d6}
 .curtain .lede{font-size:clamp(28px,8vw,40px)}
 .end{position:absolute;inset:0;z-index:5;display:grid;grid-template-rows:auto 1fr auto;text-align:center;
-  padding:calc(env(safe-area-inset-top,0px) + clamp(52px,9svh,92px)) 20px calc(env(safe-area-inset-bottom,0px) + clamp(22px,4svh,44px));visibility:hidden}
+  padding:calc(env(safe-area-inset-top,0px) + clamp(52px,calc(var(--vh)*9),92px)) 20px calc(env(safe-area-inset-bottom,0px) + clamp(22px,calc(var(--vh)*4),44px));visibility:hidden}
 .finale.after .end{visibility:visible}
 .end .head{display:grid;justify-items:center;gap:16px}
 .end .lede{color:#efe5d2;text-shadow:0 1px 14px rgba(0,0,0,.5)}
@@ -247,7 +248,7 @@ legend{margin-bottom:9px;padding:0}
 .notecue{display:inline-flex;align-items:center;gap:6px;color:#f3e3cf;text-decoration:none;font-family:var(--hand);font-size:24px;font-weight:600;line-height:1;min-height:44px;padding:6px 14px}
 .notecue svg{width:16px;height:16px;animation:nudge 2.2s ease-in-out infinite}
 @keyframes nudge{0%,100%{transform:translateY(-1px)}50%{transform:translateY(4px)}}
-.notes{position:relative;padding:clamp(70px,11svh,110px) 18px calc(env(safe-area-inset-bottom,0px) + clamp(70px,11svh,110px));background:var(--paper);overflow:hidden}
+.notes{position:relative;padding:clamp(70px,calc(var(--vh)*11),110px) 18px calc(env(safe-area-inset-bottom,0px) + clamp(70px,calc(var(--vh)*11),110px));background:var(--paper);overflow:hidden}
 .notecard{position:relative;max-width:420px;margin:0 auto;padding:46px 24px 26px;background:#fcf8f0;rotate:-.8deg;
   box-shadow:0 1px 0 rgba(58,21,26,.06),0 14px 30px -12px rgba(58,21,26,.28),0 30px 60px -30px rgba(58,21,26,.25);
   background-image:linear-gradient(90deg,transparent 30px,rgba(180,135,138,.35) 30px,rgba(180,135,138,.35) 31px,transparent 31px)}
@@ -268,7 +269,12 @@ legend{margin-bottom:9px;padding:0}
 .notecard .error{margin:12px 0 0;min-height:22px}
 .notecard .sent{text-align:center;padding:12px 0 6px}
 .notecard .sent p{font-family:var(--hand);font-size:30px;font-weight:600;line-height:1.15;color:var(--olive)}
-.notecard .sent .again{margin-top:14px;background:none;border:0;min-height:44px;padding:6px 14px;cursor:pointer;font-family:var(--hand);font-size:23px;color:#8a6a5c;text-decoration:underline;text-underline-offset:4px}
+.notecard .confirm{margin-top:20px;padding-top:18px;border-top:1px dashed rgba(110,26,38,.3);text-align:center;animation:land .45s cubic-bezier(.2,.7,.2,1) both}
+.notecard .confirm .ask{font-family:var(--hand);font-size:30px;font-weight:700;line-height:1.1;color:var(--olive)}
+.notecard .confirm .once{margin:6px auto 0;max-width:30ch;font-size:17px;line-height:1.4;color:#7a5a50}
+.notecard .confirm .send{margin-top:18px}
+.notecard .back{display:block;margin:8px auto 0;background:none;border:0;min-height:44px;padding:6px 14px;cursor:pointer;font-family:var(--hand);font-size:23px;color:#8a6a5c;text-decoration:underline;text-underline-offset:4px}
+.notecard textarea[readonly]{opacity:.75}
 .notecard.flying{animation:fly .9s cubic-bezier(.5,0,.75,0) forwards}
 @keyframes fly{to{transform:translateY(-38px) rotate(3deg) scale(.96);opacity:0}}
 .notecard.landing{animation:land .7s cubic-bezier(.2,.7,.2,1) both}
@@ -468,7 +474,7 @@ legend{margin-bottom:9px;padding:0}
         <p class="when rise" style="--d:4s">Friday, 11 December 2026 at 7:30 PM</p>
         <div class="foot-actions">
         <button class="linkish rise" style="--d:4.3s" type="button" id="changeAnswer">Change my answer</button>
-        <a class="notecue rise" style="--d:4.6s" href="#notes">Leave us a note<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></a>
+        <a class="notecue rise" style="--d:4.6s" href="#notes"><span id="cueText">Leave us a note</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></a>
         </div>
       </div>
     </div>
@@ -486,10 +492,15 @@ legend{margin-bottom:9px;padding:0}
         <textarea id="adviceText" name="advice" maxlength="1200" placeholder="For the years ahead…"></textarea>
         <p class="error" id="noteError" role="alert"></p>
         <button class="send" type="submit" id="noteSend">Send with love</button>
+        <div class="confirm" id="noteConfirm" hidden>
+          <p class="ask" id="confirmAsk">Ready to send it?</p>
+          <p class="once">You can send only one note, and it can't be changed once it's sent.</p>
+          <button class="send" type="button" id="noteYes">Yes, send it</button>
+          <button class="back" type="button" id="noteBack">Let me add something</button>
+        </div>
       </form>
       <div class="sent" id="noteSent" hidden aria-live="polite">
         <p id="noteThanks">Thank you! Your note is on its way to Omar &amp; Noha.</p>
-        <button class="again" type="button" id="noteAgain">Write another note</button>
       </div>
     </div>
   </section>
@@ -497,6 +508,14 @@ legend{margin-bottom:9px;padding:0}
 
 <script>
 (function(){
+  /* Screen height, measured once (and again only when the phone turns). iPhone changes the live
+     height when the keyboard or Safari's bars move; sizing the long walk by it made the page jump. */
+  let vhWidth = 0;
+  function freezeVh(){
+    if (innerWidth === vhWidth) return; vhWidth = innerWidth;
+    document.documentElement.style.setProperty('--vh', innerHeight / 100 + 'px');
+  }
+  freezeVh(); addEventListener('resize', freezeVh);   // turning the phone changes the width
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -712,7 +731,7 @@ legend{margin-bottom:9px;padding:0}
     stopAll(); resetEnd();
     $('#msgTitle').textContent = lines[d.attending](d.firstName);
     rsvp.hidden = true; finale.hidden = false; layoutFinale();
-    me = d; $('#noteFrom').textContent = `${d.firstName} ${d.lastName}`; $('#notes').hidden = false;
+    me = d; $('#noteFrom').textContent = `${d.firstName} ${d.lastName}`; $('#notes').hidden = false; noteState();
     if (!play || reduce) { endState(); return; }
     finale.scrollIntoView({ block: 'start' });
     document.body.classList.add('locked');
@@ -784,22 +803,42 @@ legend{margin-bottom:9px;padding:0}
   /* ---------- notes ---------- */
   let me = null;
   const noteForm = $('#noteForm'), noteErr = $('#noteError'), card = $('#notecard');
+  const noteText = $('#noteText'), adviceText = $('#adviceText'), confirmBox = $('#noteConfirm'), sendBtn = $('#noteSend'), yesBtn = $('#noteYes');
+  // one note per guest: remembered on this phone, and the storage refuses a second one by name
+  const noteKey = (d) => (d.firstName + ' ' + d.lastName).toLowerCase().replace(/\s+/g, ' ').trim();
+  function notedList(){ try { return JSON.parse(localStorage.getItem('on-noted') || '[]'); } catch (_) { return []; } }
+  function markNoted(d){ try { const l = notedList(); if (!l.includes(noteKey(d))) l.push(noteKey(d)); localStorage.setItem('on-noted', JSON.stringify(l)); } catch (_) {} }
+  function showSent(){ $('#cueText').textContent = 'Your note'; noteForm.hidden = true; $('#noteSent').hidden = false; $('#noteThanks').textContent = `Thank you, ${me.firstName}! Your note is on its way to Omar & Noha.`; }
+  function editing(on){ noteText.readOnly = adviceText.readOnly = !on; confirmBox.hidden = on; sendBtn.hidden = !on; }
+  function noteState(){
+    noteErr.textContent = ''; editing(true); card.classList.remove('flying', 'landing');
+    if (notedList().includes(noteKey(me))) showSent(); else { $('#cueText').textContent = 'Leave us a note'; noteForm.hidden = false; $('#noteSent').hidden = true; }
+  }
   noteForm.addEventListener('input', () => { noteErr.textContent = ''; });
-  noteForm.addEventListener('submit', async (e) => {
+  noteForm.addEventListener('submit', (e) => {
     e.preventDefault(); if (!me) return;
-    const note = $('#noteText').value.trim(), advice = $('#adviceText').value.trim();
-    if (!note && !advice) { noteErr.textContent = 'Write a note or a piece of advice first.'; $('#noteText').focus(); return; }
-    const btn = $('#noteSend'); btn.disabled = true; btn.textContent = 'Sending…';
-    let ok = false;
-    try { const r = await api({ action: 'note', firstName: me.firstName, lastName: me.lastName, note, advice }); ok = !!(r && r.ok); } catch (_) { ok = false; }
-    btn.disabled = false; btn.textContent = 'Send with love';
-    if (!ok) { noteErr.textContent = "Your note couldn't be sent. Check your connection and try again."; return; }
-    try { localStorage.setItem('on-notes', String((+localStorage.getItem('on-notes') || 0) + 1)); } catch (_) {}
-    const done = () => { noteForm.hidden = true; $('#noteSent').hidden = false; $('#noteThanks').textContent = `Thank you, ${me.firstName}! Your note is on its way to Omar & Noha.`; card.classList.remove('flying'); card.classList.add('landing'); };
+    const note = noteText.value.trim(), advice = adviceText.value.trim();
+    if (!note || !advice) {
+      noteErr.textContent = !note && !advice ? 'Write a note and a piece of advice, both are needed.' : !note ? 'Write a note for Omar & Noha too.' : 'Add a piece of advice too.';
+      (!note ? noteText : adviceText).focus(); return;
+    }
+    editing(false); $('#confirmAsk').textContent = `Ready to send it, ${me.firstName}?`;
+    confirmBox.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' }); yesBtn.focus({ preventScroll: true });
+  });
+  $('#noteBack').addEventListener('click', () => { editing(true); noteText.focus(); });
+  yesBtn.addEventListener('click', async () => {
+    const note = noteText.value.trim(), advice = adviceText.value.trim();
+    yesBtn.disabled = true; yesBtn.textContent = 'Sending…'; $('#noteBack').disabled = true;
+    let r = null;
+    try { r = await api({ action: 'note', firstName: me.firstName, lastName: me.lastName, note, advice }); } catch (_) { r = null; }
+    yesBtn.disabled = false; yesBtn.textContent = 'Yes, send it'; $('#noteBack').disabled = false;
+    const ok = !!(r && (r.ok || r.error === 'already'));
+    if (!ok) { editing(true); noteErr.textContent = "Your note couldn't be sent. Check your connection and try again."; return; }
+    markNoted(me);
+    const done = () => { showSent(); card.classList.remove('flying'); card.classList.add('landing'); };
     if (reduce) done(); else { card.classList.remove('landing'); card.classList.add('flying'); setTimeout(done, 850); }
   });
   $('.notecue').addEventListener('click', (e) => { e.preventDefault(); $('#notes').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); });
-  $('#noteAgain').addEventListener('click', () => { $('#noteText').value = ''; $('#adviceText').value = ''; $('#noteSent').hidden = true; noteForm.hidden = false; card.classList.remove('landing'); void card.offsetWidth; card.classList.add('landing'); $('#noteText').focus(); });
 
   try {
     const saved = JSON.parse(localStorage.getItem('on-rsvp') || 'null');
