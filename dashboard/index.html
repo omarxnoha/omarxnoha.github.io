@@ -203,8 +203,8 @@ footer{margin-top:80px;text-align:center;font-family:var(--script);font-size:34p
     $('#nYes').textContent = g.filter((x) => x.answer === 'yes').length;
     $('#nNo').textContent = g.filter((x) => x.answer === 'no').length;
     $('#nNotes').textContent = n.length;
-    const days = Math.max(0, Math.ceil((START - Date.now()) / 86400000));
-    $('#togo').textContent = days ? `${days} day${days === 1 ? '' : 's'} to go` : 'tonight';
+    const left = START - Date.now(), days = Math.ceil(left / 86400000);
+    $('#togo').textContent = left > 0 ? `${days} day${days === 1 ? '' : 's'} to go` :left > -8 * 3600e3 ? 'tonight' : 'celebrated together';
     $('#updated').textContent = 'Updated ' + new Date(data.now || Date.now()).toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit' });
     renderGuests();
     const board = $('#board'); board.innerHTML = '';
