@@ -641,7 +641,7 @@ legend{margin-bottom:9px;padding:0}
   const mores = $$('.more'), floatCue = $('#moreFloat'); let restTimer = 0;
   function restCue(){
     for (const m of mores) m.classList.remove('on');
-    clearTimeout(restTimer); restTimer = setTimeout(showCue, 1600);
+    clearTimeout(restTimer); restTimer = setTimeout(showCue, 1000);
   }
   function showCue(){
     const H = innerHeight, ae = document.activeElement;
